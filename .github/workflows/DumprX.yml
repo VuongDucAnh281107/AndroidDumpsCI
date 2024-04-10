@@ -69,7 +69,7 @@ jobs:
          run: |
               $EXTRA_CMD
               pip3 install git+https://github.com/ananjaser1211/samloader.git
-              samloader -m SM-A556E -r XXV -i 35532662 download -O .
+              samloader -m SM-A556E -r XXV -i 355326620043794 download -O .
               rm samloader.log && mv $(ls *.zip*) firmware.zip
               df -h
 
