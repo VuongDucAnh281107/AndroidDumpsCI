@@ -1,6 +1,7 @@
 # Android Dumps CI
 
-[![DumprX](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX.yml/badge.svg)](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX.yml)
+[![DumprX on GITGUD](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX_on_GITGUD.yml/badge.svg)](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX_on_GITGUD.yml)
+[![DumprX on GitLab](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX_on_GitLab.yml/badge.svg)](https://github.com/Van-Firmware-Dumps/AndroidDumpsCI/actions/workflows/DumprX_on_GitLab.yml)
 
 > CI for Android Firmwares Dumps
 
