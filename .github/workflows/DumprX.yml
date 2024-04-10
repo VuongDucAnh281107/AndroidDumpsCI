@@ -29,8 +29,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+       - name: Cleanup
+         uses: rokibhasansagar/slimhub_actions@main
+
        - name: Checkouts
-         uses: actions/checkout@v2
+         uses: actions/checkout@v4
 
        - name: Clone Our Firmware Dumper
          run: |
@@ -44,7 +47,7 @@ jobs:
               sudo apt install -y f2fs-tools neofetch
               mkdir -p ~/.ssh
               ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-              ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+              ssh-keyscan -t rsa gitgud.io >> ~/.ssh/known_hosts
               git config --global user.name "VanVuong41429"
               git config --global user.email "vanvuong41429@gmail.com"
 
