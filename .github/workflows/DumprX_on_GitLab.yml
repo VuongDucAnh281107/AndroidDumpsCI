@@ -54,8 +54,6 @@ jobs:
        - name: Setup Config envs
          working-directory: DumprX
          run: |
-              # echo "${{ secrets.GIT_TOKEN }}" > .github_token
-              # echo "${{ secrets.GIT_ORG_NAME }}" > .github_orgname
               echo "${{ secrets.GITLAB_TOKEN }}" > .gitlab_token  # Only for Gitlab
               echo "Van-Firmware-Dumps" > .gitlab_group  # Only for Gitlab
               echo "gitlab.com" > .gitlab_instance  # Only for Gitlab
