@@ -68,7 +68,7 @@ jobs:
               $EXTRA_CMD
               df -h
               pip3 install git+https://github.com/ananjaser1211/samloader.git
-              samloader -m SM-G556B -r EUY -i 35524132 download -O .
+              samloader -m SM-X306B -r EUY -i 35177120 download -O .
               rm samloader.log && mv $(ls *.zip*) firmware.zip
               df -h
 
