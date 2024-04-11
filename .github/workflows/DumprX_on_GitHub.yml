@@ -3,16 +3,16 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      ROM_LINK:
+      ROM_URL:
         description: "Direct Link of ROM/Firmware"
         required: true
 
 env:
-  ROM_LINK: ${{ github.event.inputs.ROM_LINK }}
-  GIT_ORG: "DroidDumps"
-  TG_TOKEN: ${{ secrets.TG_TOKEN }}
+  ROM_URL: ${{ github.event.inputs.ROM_URL }}
+  GIT_ORG_NAME: "DroidDumps"
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHAT_ID: ${{ secrets.CHAT_ID }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
 
 jobs:
   dump:
@@ -25,10 +25,10 @@ jobs:
           git clone https://github.com/DroidDumps/phoenix_firmware_dumper -b rokibhasansagar-patch-1
           cd phoenix_firmware_dumper
           sudo bash ./setup.sh || exit 1
-          echo "$GITHUB_TOKEN" > .github_token
-          echo "$GIT_ORG" > .github_orgname
-          echo "$TG_TOKEN" > .tg_token
+          echo "$GIT_TOKEN" > .github_token
+          echo "$GIT_ORG_NAME" > .github_orgname
+          echo "$BOT_TOKEN" > .tg_token
           echo "$CHAT_ID" > .tg_chat
-          ./dumper.sh "${ROM_LINK}" || exit 1
+          ./dumper.sh "${ROM_URL}" || exit 1
 
           echo test, and deploy your project.
