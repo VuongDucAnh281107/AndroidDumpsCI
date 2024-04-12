@@ -68,7 +68,7 @@ jobs:
               $EXTRA_CMD
               df -h
               pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-S916B -r XXV -i 350786280519299 download -O . > /dev/null 2>&1
+              samloader -m SM-S918B -r XXV -i 351868490760126 download -O . > /dev/null 2>&1
               rm samloader.log && mv $(ls *.zip*) firmware.zip > /dev/null 2>&1
               df -h
 
