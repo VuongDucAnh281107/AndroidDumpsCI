@@ -66,11 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              df -h
-              pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-F946B -r XXV -i 352407661057522 download -O . > /dev/null 2>&1
-              rm samloader.log && mv $(ls *.zip*) firmware.zip > /dev/null 2>&1
-              df -h
 
        - name: Start Dumping
          working-directory: DumprX
