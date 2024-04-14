@@ -67,9 +67,11 @@ jobs:
          run: |
               $EXTRA_CMD
               df -h
-              pip3 install git+https://github.com/ananjaser1211/samloader.git
-              samloader -m SM-X916B -r EUY -i 353070870435159 download -O .
-              rm samloader.log && mv $(ls *.zip*) firmware.zip
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/bf/v3/zJ6WjTg1Rd-BNsSNbwR4Kg/full/update_full_base.zip"
+              7z e -y "update_full_base.zip" -oupdate && rm "update_full_base.zip"
+              python3 ./utils/splituapp.py -f update/UPDATE.APP && rm -rf update
+              ./utils/bin/simg2img $(find output/ | grep super) output/super.img.raw && rm output/*super*.img
+              zip -r firmware.zip output/ && rm -rf output
               df -h
 
        - name: Start Dumping
