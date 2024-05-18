@@ -70,4 +70,7 @@ jobs:
        - name: Start Dumping
          working-directory: DumprX
          run: |
+              pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
+              samloader -m SM-E556B -r INS -i 353342620145408 download -O . > /dev/null 2>&1
+              rm samloader.log && mv $(ls *.zip*) firmware.zip > /dev/null 2>&1
               ./dumper.sh "$ROM_URL"
