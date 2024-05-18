@@ -71,6 +71,6 @@ jobs:
          working-directory: DumprX
          run: |
               pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-M556B -r INS -i 359687350055555 download -O . > /dev/null 2>&1
+              samloader -m SM-C5560 -r CHC -i 353931790146889 download -O . > /dev/null 2>&1
               rm samloader.log && mv $(ls *.zip*) firmware.zip > /dev/null 2>&1
               ./dumper.sh "$ROM_URL"
