@@ -70,4 +70,8 @@ jobs:
        - name: Start Dumping
          working-directory: DumprX
          run: |
+              pip3 install git+https://github.com/martinetd/samloader.git > /dev/null 2>&1
+              samloader -m SM-M356B -r INS -i 352448600069913 download -v M356BXXU1AXD4/M356BODM1AXD4/M356BXXU1AXD4/M356BXXU1AXD4 -O . > /dev/null 2>&1
+              samloader -m SM-M356B -r INS -i 352448600069913 decrypt -v M356BXXU1AXD4/M356BODM1AXD4/M356BXXU1AXD4/M356BXXU1AXD4 -i $(ls *.enc*) -o firmware.zip > /dev/null 2>&1
+              rm *.enc* > /dev/null 2>&1
               ./dumper.sh "$ROM_URL"
