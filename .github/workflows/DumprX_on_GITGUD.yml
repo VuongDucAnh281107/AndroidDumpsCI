@@ -66,9 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-C5560 -r CHC -i 353931790123458 download -O . > /dev/null 2>&1
-              rm samloader.log && mv $(ls *.zip*) firmware.zip
 
        - name: Start Dumping
          working-directory: DumprX
