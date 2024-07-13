@@ -66,14 +66,14 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/b1/v3/Lc64Il_oQtew12Lp_9pm_w/full/update_full_base.zip"
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/da/v3/doK6KZhnQo6MY-AjsqPhpw/full/update_full_base.zip"
               7z e -y firmware.zip UPDATE.APP && rm firmware.zip
               python3 ./utils/splituapp.py -f UPDATE.APP && rm UPDATE.APP
               ./utils/bin/simg2img $(ls output/*super*.img) output/super.img.raw && rm output/*super*.img
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/2d/v3/6wLi42u1SM-zGkCrsbh0Sw/full/update_full_cust_BLA-AL00_porsche_cn.zip"
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/36/v3/oIWIJWnSQSKx5I_ElnLjxg/full/update_full_cust_LYA-AL00P_porsche_cn.zip"
               7z e -y firmware.zip UPDATE.APP && rm firmware.zip
               python3 ./utils/splituapp.py -f UPDATE.APP -l version && rm UPDATE.APP
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/2b/v3/T2-qLEu3RSuAiDjhk95zxQ/full/update_full_preload_BLA-AL00_porsche_cn_R1.zip"
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/fc/v3/ChjJ1KT5Rd-dbdxuWQeW9A/full/update_full_preload_LYA-AL00P_porsche_cn_R3.zip"
               7z e -y firmware.zip UPDATE.APP && rm firmware.zip
               python3 ./utils/splituapp.py -f UPDATE.APP -l preload && rm UPDATE.APP
               zip -r firmware.zip output && rm -rf output
