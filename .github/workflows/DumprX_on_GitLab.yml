@@ -70,4 +70,17 @@ jobs:
        - name: Start Dumping
          working-directory: DumprX
          run: |
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/ec/v3/wA6a9sidQWuY3YvUdyVLiQ/full/update_full_base.zip" > /dev/null 2>&1
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/58/v3/93IMjamXShmGVkDRDHANbw/full/update_full_cust_NEO-AL00_porsche_cn.zip" > /dev/null 2>&1
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/5e/v3/DCnvRBx1T7SOdXViiSCz0w/full/update_full_preload_NEO-AL00_porsche_cn_R1.zip" > /dev/null 2>&1
+              7z x -y -o'output' update_full_base.zip UPDATE.APP > /dev/null 2>&1
+              7z x -y update_full_cust_NEO-AL00_porsche_cn.zip UPDATE.APP > /dev/null 2>&1
+              mv UPDATE.APP cust.APP
+              7z x -y update_full_preload_NEO-AL00_porsche_cn_R1.zip UPDATE.APP > /dev/null 2>&1
+              mv UPDATE.APP preload.APP
+              python3 ./utils/splituapp.py -f cust.APP -l version > /dev/null 2>&1
+              python3 ./utils/splituapp.py -f preload.APP -l preload > /dev/null 2>&1
+              rm update_full_base.zip update_full_cust_NEO-AL00_porsche_cn.zip update_full_preload_NEO-AL00_porsche_cn_R1.zip cust.APP preload.APP
+              zip -r NEO-AL00.zip output > /dev/null 2>&1
+              rm -rf output
               ./dumper.sh "$ROM_URL"
