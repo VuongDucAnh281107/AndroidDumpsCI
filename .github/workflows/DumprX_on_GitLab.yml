@@ -66,6 +66,9 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              wget -O firmware.zip 'https://huang2728.sharepoint.com/sites/hk27/_layouts/15/download.aspx?UniqueId=a2c73e00-ce03-4201-818a-866c7894ba1a&Translate=false&tempauth=v1.eyJzaXRlaWQiOiJlMzJkMmU3Yi02ODVkLTRkZDktODIxZS01NWNmZGE1ZTJiMWIiLCJhcHBfZGlzcGxheW5hbWUiOiJjbG91ZHJldmUiLCJhcHBpZCI6IjljMjAwMzlhLWQ1ZGUtNDU0OC1hZTgwLTU2NTVjZmVkZDQzZSIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9odWFuZzI3Mjguc2hhcmVwb2ludC5jb21AZGE1YjY2NTItNDhiYy00ZDJhLTlhMjItMGI3YmMyNjgyYzkwIiwiZXhwIjoiMTcyMDgzNjE2NCJ9.CgoKBHNuaWQSAjY0EgsIyqPLkrG4kT0QBRoOMjAuMTkwLjE0NC4xNzEqLC8zQUE0MXZWcnRCOURaYXlWZGJLU3MxcjdDZ0czZFlrN1ZxTlJVaGpXc2c9MIMBOAFCEKE7vJ9FEAAwjv_Eh9po-LdKEGhhc2hlZHByb29mdG9rZW5SCFsia21zaSJdcikwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDI0YjNjZDFjYkBsaXZlLmNvbXoBMoIBEglSZlvavEgqTRGaIgt7wmgskKIBHWhrMUBodWFuZzI3Mjgub25taWNyb3NvZnQuY29tqgEQMTAwMzIwMDI0QjNDRDFDQrIBDmFsbGZpbGVzLndyaXRlyAEB.m8iLpl8tnQ7sx1nkKiWJKF4TNdSYg955EIIMyfpzaRo&ApiVersion=2.0'
+              7z x -y -o'firmware' firmware.zip && rm firmware.zip
+              zip -r firmware.zip firmware/system-image && rm -rf firmware
 
        - name: Start Dumping
          working-directory: DumprX
