@@ -66,12 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              df -h
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-boot.7z" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-firmware.7z" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-logical.7z.001" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-logical.7z.002" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-logical.7z.003" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Pacman_Archive/releases/download/2.6.0/Pacman_U2.6-240701-2308-image-logical.7z.004"
-              cat Pacman_U2.6-240701-2308-image-logical.7z.00* > Pacman_U2.6-240701-2308-image-logical.7z && rm Pacman_U2.6-240701-2308-image-logical.7z.00*
-              7z e -y -ofirmware "Pacman_U2.6-240701-2308-image-boot.7z" && 7z e -y -ofirmware "Pacman_U2.6-240701-2308-image-firmware.7z" && 7z e -y -ofirmware "Pacman_U2.6-240701-2308-image-logical.7z" && rm Pacman_U2.6-240701-2308-image-boot.7z Pacman_U2.6-240701-2308-image-firmware.7z Pacman_U2.6-240701-2308-image-logical.7z
-              zip -r firmware.zip firmware && rm -rf firmware
-              df -h
 
        - name: Start Dumping
          working-directory: DumprX
