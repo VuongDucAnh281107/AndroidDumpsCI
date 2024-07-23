@@ -66,6 +66,12 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              df -h
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Tetris_Archive/releases/download/2.6.0_Hotfix-2/Tetris_U2.6-240713-1955-image-boot.7z" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Tetris_Archive/releases/download/2.6.0_Hotfix-2/Tetris_U2.6-240713-1955-image-firmware.7z" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Tetris_Archive/releases/download/2.6.0_Hotfix-2/Tetris_U2.6-240713-1955-image-logical.7z.001" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Tetris_Archive/releases/download/2.6.0_Hotfix-2/Tetris_U2.6-240713-1955-image-logical.7z.002" && aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false "https://github.com/spike0en/Tetris_Archive/releases/download/2.6.0_Hotfix-2/Tetris_U2.6-240713-1955-image-logical.7z.003"
+              cat Tetris_U2.6-240713-1955-image-logical.7z.00* > Tetris_U2.6-240713-1955-image-logical.7z && rm Tetris_U2.6-240713-1955-image-logical.7z.00*
+              7z e -y -ofirmware "Tetris_U2.6-240713-1955-image-boot.7z" && 7z e -y -ofirmware "Tetris_U2.6-240713-1955-image-firmware.7z" && 7z e -y -ofirmware "Tetris_U2.6-240713-1955-image-logical.7z" && rm Tetris_U2.6-240713-1955-image-boot.7z Tetris_U2.6-240713-1955-image-firmware.7z Tetris_U2.6-240713-1955-image-logical.7z
+              zip -r firmware.zip firmware && rm -rf firmware
+              df -h
 
        - name: Start Dumping
          working-directory: DumprX
