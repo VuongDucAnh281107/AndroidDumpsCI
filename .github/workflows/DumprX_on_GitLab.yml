@@ -66,19 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              df -h
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/68/v3/a75O-5yOS_-YwtDjP3UAgw/full/update_full_base.zip"
-              7z e -y firmware.zip UPDATE.APP && rm firmware.zip
-              python3 ./utils/splituapp.py -f UPDATE.APP && rm UPDATE.APP
-              ./utils/bin/simg2img $(ls output/*super*.img) output/super.img.raw && rm output/*super*.img
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/17/v3/egfcfFdrQnKFswtt4CvnJQ/full/update_full_cust_CLT-AL00l_all_cn.zip"
-              7z e -y firmware.zip UPDATE.APP && rm firmware.zip
-              python3 ./utils/splituapp.py -f UPDATE.APP -l version && rm UPDATE.APP
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "http://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/66/v3/pm0dXJOlT1Wx6T-bkWFnvw/full/update_full_preload_CLT-AL00l_all_cn_R1.zip"
-              7z e -y firmware.zip UPDATE.APP && rm firmware.zip
-              python3 ./utils/splituapp.py -f UPDATE.APP -l preload && rm UPDATE.APP
-              zip -r firmware.zip output && rm -rf output
-              df -h
 
        - name: Start Dumping
          working-directory: DumprX
