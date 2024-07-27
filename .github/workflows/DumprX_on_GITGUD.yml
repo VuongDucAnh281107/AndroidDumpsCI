@@ -66,6 +66,12 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "https://mirrors-obs-2.lolinet.com/firmware/lenomola/2019/lake/official/RETLA/XT1965-2_LAKE_RETLA_10_QPWS30.61-21-18-7-12_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip"
+              7z e -y -ofirmware "firmware.zip" && rm firmware.zip
+              ./utils/bin/simg2img firmware/*system*chunk* firmware/system.img.raw && ./utils/bin/simg2img firmware/*vendor*chunk* firmware/vendor.img.raw
+              rm firmware/*system*chunk* firmware/*vendor*chunk*
+              mv firmware/system.img.raw firmware/system.img && mv firmware/vendor.img.raw firmware/vendor.img
+              zip -r firmware.zip firmware && rm -rf firmware
 
        - name: Start Dumping
          working-directory: DumprX
