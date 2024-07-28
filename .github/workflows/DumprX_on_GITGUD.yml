@@ -69,8 +69,8 @@ jobs:
               aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "https://mirrors-obs-2.lolinet.com/firmware/lenomola/2019/ocean/official/RETEU/XT1955-4_OCEAN_RETEU_10_QPOS30.52-29-7-6_cid50_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip"
               7z e -y -ofirmware "firmware.zip" && rm firmware.zip
               cd firmware
-              ../utils/bin/simg2img *system*chunk* system.img.raw && ../utils/bin/simg2img *vendor*chunk* vendor.img.raw
-              rm *system*chunk* *vendor*chunk*
+              ../utils/bin/simg2img *system.img*chunk* system.img.raw && ../utils/bin/simg2img *vendor.img*chunk* vendor.img.raw
+              rm *system.img*chunk* *vendor.img*chunk*
               mv system.img.raw system.img && mv vendor.img.raw vendor.img
               cd .. && zip -r firmware.zip firmware && rm -rf firmware
 
