@@ -66,7 +66,7 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "https://mirrors-obs-2.lolinet.com/firmware/lenomola/2019/channel/official/RETEU/XT1952-1_CHANNEL_RETEU_10_QPYS30.52-22-8-9_cid50_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip"
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o firmware.zip "https://mirrors-obs-2.lolinet.com/firmware/lenomola/2019/river/official/RETAIL/RIVER_RETAIL_10_QPUS30.52-16-2-7-8_cid50_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip"
               7z e -y -ofirmware "firmware.zip" && rm firmware.zip
               cd firmware
               ../utils/bin/simg2img *system.img*chunk* system.img.raw && ../utils/bin/simg2img *vendor.img*chunk* vendor.img.raw
