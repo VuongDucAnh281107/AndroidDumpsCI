@@ -66,11 +66,11 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o TB352FU.7z "https://mirrors.lolinet.com/firmware/lenowow/2024/Tab_K11_Plus_2024/TB352FU/TB352FU_ROW_OPEN_USER_Q00007.0_U_ZUI_16.0.10.045_ST_240628.7z"
-              7z e -y -oTB352FU TB352FU.7z && rm TB352FU.7z TB352FU/*rawprogram*
-              cd TB352FU
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o TB352XU.7z "https://mirrors.lolinet.com/firmware/lenowow/2024/Tab_K11_Plus_2024/TB352XU/TB352XU_ROW_OPEN_USER_Q00007.0_U_ZUI_16.0.10.046_ST_240628.7z"
+              7z e -y -oTB352XU TB352XU.7z && rm TB352XU.7z TB352XU/*rawprogram*
+              cd TB352XU
               mv super_1.img super.img && mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_dlkm.img && mv super_6.img system_ext.img && mv super_7.img vendor.img && mv super_8.img vendor_dlkm.img
-              cd .. && zip -r firmware.zip TB352FU && rm -rf TB352FU
+              cd .. && zip -r firmware.zip TB352XU && rm -rf TB352XU
 
        - name: Start Dumping
          working-directory: DumprX
