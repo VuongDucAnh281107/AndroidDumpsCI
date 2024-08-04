@@ -66,6 +66,11 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o TB610FU.zip "https://mirrors.lolinet.com/firmware/lenowow/2024/ThinkBook_Plus_Gen_5_Tab/TB610FU/TB610FU_ROW_OPEN_USER_Q00048.0_T_ZUI_15.1.383_ST_240621.zip"
+              7z e -y -oTB610FU TB610FU.zip && rm TB610FU.zip TB610FU/*rawprogram*
+              cd TB610FU
+              mv super_1.img super.img && mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_ext.img && mv super_6.img vendor.img && mv super_7.img vendor_dlkm.img
+              cd .. && zip -r firmware.zip TB610FU && rm -rf TB610FU
 
        - name: Start Dumping
          working-directory: DumprX
