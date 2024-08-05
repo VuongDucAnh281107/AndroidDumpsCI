@@ -66,6 +66,9 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
+              samloader -m SM-M356B -r ZTO -i 352448600123454 download -O . > /dev/null 2>&1 || echo "Download Failed!"
+              rm samloader.log && mv $(ls *SM-M356B*.zip) firmware.zip
 
        - name: Start Dumping
          working-directory: DumprX
