@@ -67,8 +67,8 @@ jobs:
          run: |
               $EXTRA_CMD
               pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-E145F -r INS -i 351223881083987 download -O . > /dev/null 2>&1 || echo "Download Failed!"
-              rm samloader.log && mv $(ls *SM-E145F*.zip) firmware.zip
+              samloader -m SM-G556B -r EUY -i 355241320631642 download -O . > /dev/null 2>&1 || echo "Download Failed!"
+              rm samloader.log && mv $(ls *SM-G556B*.zip) firmware.zip
 
        - name: Start Dumping
          working-directory: DumprX
