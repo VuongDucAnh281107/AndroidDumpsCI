@@ -66,6 +66,11 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o TB320FC.zip "https://mirrors.lolinet.com/firmware/lenowow/2023/Y700_2023/TB320FC/TB320FC_ROW_OPEN_USER_Q00031.0_U_ZUI_16.0.324_ST_240718.zip"
+              7z e -y TB320FC.zip -oTB320FC && rm TB320FC.zip TB320FC/*rawprogram*
+              cd TB320FC && file *super*
+              mv super_1.img super.img && mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_ext.img && mv super_6.img vendor.img && mv super_7.img vendor_dlkm.img
+              cd .. && zip -r firmware.zip TB320FC && rm -rf TB320FC
 
        - name: Start Dumping
          working-directory: DumprX
