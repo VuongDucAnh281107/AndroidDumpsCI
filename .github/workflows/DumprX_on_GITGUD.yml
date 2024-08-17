@@ -67,8 +67,8 @@ jobs:
          run: |
               $EXTRA_CMD
               pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-M156B -r INS -i 354773371234562 download -O . > /dev/null 2>&1 || echo "Download Failed!"
-              rm samloader.log && mv $(ls *SM-M156B*.zip*) firmware.zip
+              samloader -m SM-M556B -r INS -i 359687350123452 download -O . > /dev/null 2>&1 || echo "Download Failed!"
+              rm samloader.log && mv $(ls *SM-M556B*.zip*) firmware.zip
 
        - name: Start Dumping
          working-directory: DumprX
