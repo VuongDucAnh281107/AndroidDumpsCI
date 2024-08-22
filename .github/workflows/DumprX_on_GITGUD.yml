@@ -66,10 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-A065F -r INS -i 356026210166554 download -v A065FXXU1AXG8/A065FODM1AXG8/A065FXXU1AXG8/A065FXXU1AXG8 -O .
-              samloader -m SM-A065F -r INS -i 356026210166554 decrypt -v A065FXXU1AXG8/A065FODM1AXG8/A065FXXU1AXG8/A065FXXU1AXG8 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
 
        - name: Start Dumping
          working-directory: DumprX
