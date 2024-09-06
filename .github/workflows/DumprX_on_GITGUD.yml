@@ -66,11 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              aria2c -x16 -s8 --console-log-level=warn --summary-interval=0 --check-certificate=false -o TB360ZU.zip "https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M10_5G/TB360ZU/TB360ZU_ROW_OPEN_USER_Q00024.0_U_ZUI_16.0.608_ST_240620.zip"
-              7z e -y -oTB360ZU TB360ZU.zip && rm TB360ZU.zip TB360ZU/*rawprogram*
-              cd TB360ZU
-              mv super_1.img super.img && mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_ext.img && mv super_6.img vendor.img
-              cd .. && zip -r firmware.zip TB360ZU && rm -rf TB360ZU
 
        - name: Start Dumping
          working-directory: DumprX
