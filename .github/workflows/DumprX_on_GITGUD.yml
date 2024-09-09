@@ -67,8 +67,8 @@ jobs:
          run: |
               $EXTRA_CMD
               pip3 install git+https://github.com/ananjaser1211/samloader.git > /dev/null 2>&1
-              samloader -m SM-S926B -r EUX -i 350110540225722 download -O . > /dev/null 2>&1 || echo "Download Failed!"
-              rm samloader.log && mv $(ls *SM-S926B*.zip*) firmware.zip
+              samloader -m SM-S928B -r EUX -i 355731670552299 download -O . > /dev/null 2>&1 || echo "Download Failed!"
+              rm samloader.log && mv $(ls *SM-S928B*.zip*) firmware.zip
 
        - name: Start Dumping
          working-directory: DumprX
