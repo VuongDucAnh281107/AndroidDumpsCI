@@ -66,7 +66,7 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              pip3 install git+https://github.com/martinetd/samloader.git
+              pip3 install git+https://github.com/martinetd/samloader.git --break-system-packages
               samloader -m SM-M558B -r INS -i 355532650129607 download -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -O .
               samloader -m SM-M558B -r INS -i 355532650129607 decrypt -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -i $(ls *.enc*) -o firmware.zip
               rm $(ls *.enc*)
