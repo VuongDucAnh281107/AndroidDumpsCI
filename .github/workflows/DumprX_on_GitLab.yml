@@ -30,7 +30,7 @@ jobs:
 
     steps:
        - name: Cleanup
-         uses: rokibhasansagar/slimhub_actions@main
+         uses: Van-Firmware-Dumps/slimhub_actions@main
 
        - name: Checkouts
          uses: actions/checkout@v4
