@@ -66,10 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-X920 -r XAR -i R52X906RPCK download -v X920XXU1AXI9/X920OXM1AXI9/X920XXU1AXI9/X920XXU1AXI9 -O .
-              samloader -m SM-X920 -r XAR -i R52X906RPCK decrypt -v X920XXU1AXI9/X920OXM1AXI9/X920XXU1AXI9/X920XXU1AXI9 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
 
        - name: Start Dumping
          working-directory: DumprX
