@@ -66,10 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-E055F -r INS -i 353099641279323 download -v E055FXXU1AXH4/E055FODM1AXH4/E055FXXU1AXH3/E055FXXU1AXH4 -O .
-              samloader -m SM-E055F -r INS -i 353099641279323 decrypt -v E055FXXU1AXH4/E055FODM1AXH4/E055FXXU1AXH3/E055FXXU1AXH4 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
 
        - name: Start Dumping
          working-directory: DumprX
