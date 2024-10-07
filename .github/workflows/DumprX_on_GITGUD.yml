@@ -66,6 +66,11 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              df -h
+              pip3 install git+https://github.com/ananjaser1211/samloader.git
+              samloader -m SM-S721B -r EUX -i 350109790027408 download -O .
+              rm samloader.log && mv $(ls *SM-S721B*.zip*) firmware.zip
+              df -h
 
        - name: Start Dumping
          working-directory: DumprX
