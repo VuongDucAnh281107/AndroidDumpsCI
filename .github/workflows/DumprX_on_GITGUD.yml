@@ -67,9 +67,10 @@ jobs:
          run: |
               $EXTRA_CMD
               df -h
-              pip3 install git+https://github.com/ananjaser1211/samloader.git
-              samloader -m SM-P625 -r EUX -i 354348130203529 download -O .
-              rm samloader.log && mv $(ls *SM-P625*.zip*) firmware.zip
+              pip3 install git+https://github.com/martinetd/samloader.git
+              samloader -m SM-M558B -r INS -i 355532650129607 download -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -O .
+              samloader -m SM-M558B -r INS -i 355532650129607 decrypt -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -i $(ls *.enc*) -o firmware.zip
+              rm $(ls *.enc*)
               df -h
 
        - name: Start Dumping
