@@ -67,10 +67,9 @@ jobs:
          run: |
               $EXTRA_CMD
               df -h
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-M558B -r INS -i 355532650129607 download -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -O .
-              samloader -m SM-M558B -r INS -i 355532650129607 decrypt -v M558BXXU1AXI1/M558BODM1AXI1/M558BXXU1AXI1/M558BXXU1AXI1 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
+              pip3 install git+https://github.com/ananjaser1211/samloader.git
+              samloader -m SM-M156B -r INS -i 354773371234562 download -O .
+              rm samloader.log && mv $(ls *SM-M156B*.zip*) firmware.zip
               df -h
 
        - name: Start Dumping
