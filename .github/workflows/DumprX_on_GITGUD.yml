@@ -68,8 +68,8 @@ jobs:
               $EXTRA_CMD
               df -h
               pip3 install git+https://github.com/ananjaser1211/samloader.git
-              samloader -m SM-M156B -r INS -i 354773371234562 download -O .
-              rm samloader.log && mv $(ls *SM-M156B*.zip*) firmware.zip
+              samloader -m SM-M356B -r INS -i 353154431234564 download -O .
+              rm samloader.log && mv $(ls *SM-M356B*.zip*) firmware.zip
               df -h
 
        - name: Start Dumping
