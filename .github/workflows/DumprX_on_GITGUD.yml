@@ -67,10 +67,9 @@ jobs:
          run: |
               $EXTRA_CMD
               df -h
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-E055F -r INS -i 353099641279323 download -v E055FXXU1AXH4/E055FODM1AXH4/E055FXXU1AXH3/E055FXXU1AXH4 -O .
-              samloader -m SM-E055F -r INS -i 353099641279323 decrypt -v E055FXXU1AXH4/E055FODM1AXH4/E055FXXU1AXH3/E055FXXU1AXH4 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
+              pip3 install git+https://github.com/ananjaser1211/samloader.git
+              samloader -m SM-P625 -r EUX -i 354348130203529 download -O .
+              rm samloader.log && mv $(ls *SM-P625*.zip*) firmware.zip
               df -h
 
        - name: Start Dumping
