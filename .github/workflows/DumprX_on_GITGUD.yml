@@ -68,8 +68,8 @@ jobs:
               $EXTRA_CMD
               df -h
               pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-X926B -r EUX -i 352384910102682 download -v X926BXXU1AXI9/X926BOXM1AXI9/X926BXXU1AXI9/X926BXXU1AXI9 -O .
-              samloader -m SM-X926B -r EUX -i 352384910102682 decrypt -v X926BXXU1AXI9/X926BOXM1AXI9/X926BXXU1AXI9/X926BXXU1AXI9 -i $(ls *.enc*) -o firmware.zip
+              samloader -m SM-M055F -r INS -i 353866250562250 download -v M055FXXU1AXH5/M055FODM1AXH5/M055FXXU1AXH3/M055FXXU1AXH5 -O .
+              samloader -m SM-M055F -r INS -i 353866250562250 decrypt -v M055FXXU1AXH5/M055FODM1AXH5/M055FXXU1AXH3/M055FXXU1AXH5 -i $(ls *.enc*) -o firmware.zip
               rm $(ls *.enc*)
               df -h
 
