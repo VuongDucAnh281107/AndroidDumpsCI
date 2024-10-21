@@ -66,12 +66,6 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
-              df -h
-              pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-A166B -r EUX -i 352907210146080 download -v A166BXXU1AXI6/A166BOXM1AXI6/A166BXXU1AXI6/A166BXXU1AXI6 -O .
-              samloader -m SM-A166B -r EUX -i 352907210146080 decrypt -v A166BXXU1AXI6/A166BOXM1AXI6/A166BXXU1AXI6/A166BXXU1AXI6 -i $(ls *.enc*) -o firmware.zip
-              rm $(ls *.enc*)
-              df -h
 
        - name: Start Dumping
          working-directory: DumprX
