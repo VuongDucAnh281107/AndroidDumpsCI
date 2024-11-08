@@ -66,6 +66,11 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              df -h
+              pip3 install git+https://github.com/ananjaser1211/samloader.git
+              samloader -m SM-W9025 -r CHC -i 358472750200080 download -O .
+              rm samloader.log && mv $(ls *SM-W9025*.zip*) firmware.zip
+              df -h
 
        - name: Start Dumping
          working-directory: DumprX
