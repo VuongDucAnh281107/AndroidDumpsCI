@@ -68,8 +68,8 @@ jobs:
               $EXTRA_CMD
               df -h
               pip3 install git+https://github.com/martinetd/samloader.git
-              samloader -m SM-X926B -r EUX -i 353192340180015 download -v X926BXXS2AXJ7/X926BOXM2AXJ7/X926BXXS2AXJ7/X926BXXS2AXJ7 -O .
-              samloader -m SM-X926B -r EUX -i 353192340180015 decrypt -v X926BXXS2AXJ7/X926BOXM2AXJ7/X926BXXS2AXJ7/X926BXXS2AXJ7 -i $(ls *.enc*) -o firmware.zip
+              samloader -m SM-A166P -r INS -i 352456880305360 download -v A166PXXU1AXIC/A166PODM1AXIC/A166PXXU1AXIC/A166PXXU1AXIC -O .
+              samloader -m SM-A166P -r INS -i 352456880305360 decrypt -v A166PXXU1AXIC/A166PODM1AXIC/A166PXXU1AXIC/A166PXXU1AXIC -i $(ls *.enc*) -o firmware.zip
               rm $(ls *.enc*)
               df -h
 
