@@ -66,6 +66,12 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              df -h
+              pip3 install git+https://github.com/martinetd/samloader.git
+              samloader -m SM-X826B -r EUX -i 355200990239953 download -v X826BXXS2AXJ7/X826BOXM2AXJ7/X826BXXS2AXJ7/X826BXXS2AXJ7 -O .
+              samloader -m SM-X826B -r EUX -i 355200990239953 decrypt -v X826BXXS2AXJ7/X826BOXM2AXJ7/X826BXXS2AXJ7/X826BXXS2AXJ7 -i $(ls *.enc*) -o firmware.zip
+              rm $(ls *.enc*)
+              df -h
 
        - name: Start Dumping
          working-directory: DumprX
