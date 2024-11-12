@@ -67,10 +67,10 @@ jobs:
          run: |
               $EXTRA_CMD
               df -h
-              aria2c -x16 --continue=true --console-log-level=warn --summary-interval=0 --check-certificate=false "https://mirrors.lolinet.com/firmware/lenowow/2024/Tab_K11_Plus_2024/TB352XU/TB352XU_ROW_OPEN_USER_Q00007.0_U_ZUI_16.0.10.123_ST_240830.zip" -o TB352XU.zip
-              7z e -y TB352XU.zip -oTB352XU && rm TB352XU.zip && cd TB352XU
-              mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_dlkm.img && mv super_6.img system_ext.img && mv super_7.img vendor.img && mv super_8.img vendor_dlkm.img && cd ..
-              zip -r TB352XU.zip TB352XU && rm -rf TB352XU
+              aria2c -x16 --continue=true --console-log-level=warn --summary-interval=0 --check-certificate=false "https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M10_5G/TB360ZU/TB360ZU_ROW_OPEN_USER_Q00024.0_U_ZUI_16.0.634_ST_240907.zip" -o TB360ZU.zip
+              7z e -y TB360ZU.zip -oTB360ZU && rm TB360ZU.zip && cd TB360ZU
+              mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_ext.img && mv super_6.img vendor.img && cd ..
+              zip -r TB360ZU.zip TB360ZU && rm -rf TB360ZU
               df -h
 
        - name: Start Dumping
