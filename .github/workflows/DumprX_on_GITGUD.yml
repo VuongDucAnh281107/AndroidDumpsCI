@@ -66,6 +66,12 @@ jobs:
          working-directory: DumprX
          run: |
               $EXTRA_CMD
+              df -h
+              aria2c -x16 --continue=true --console-log-level=warn --summary-interval=0 --check-certificate=false "https://mirrors.lolinet.com/firmware/lenowow/2024/Tab_K11_Plus_2024/TB352FU/TB352FU_ROW_OPEN_USER_Q00007.0_U_ZUI_16.0.10.085_ST_240828.zip" -o TB352FU.zip
+              7z e -y TB352FU.zip -oTB352FU && rm TB352FU.zip && cd TB352FU
+              mv super_2.img odm.img && mv super_3.img product.img && mv super_4.img system.img && mv super_5.img system_dlkm.img && mv super_6.img system_ext.img && mv super_7.img vendor.img && mv super_8.img vendor_dlkm.img && cd ..
+              zip -r TB352FU.zip TB352FU && rm -rf TB352FU
+              df -h
 
        - name: Start Dumping
          working-directory: DumprX
