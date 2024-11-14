@@ -48,8 +48,8 @@ jobs:
               ssh-keyscan -t rsa gitgud.io >> ~/.ssh/known_hosts
               git config --global user.name "VanVuong41429"
               git config --global user.email "vanvuong41429@gmail.com"
+              sudo apt install -y neofetch
               sudo bash setup.sh
-              sudo apt install -y f2fs-tools neofetch
 
        - name: Setup Config envs
          working-directory: DumprX
